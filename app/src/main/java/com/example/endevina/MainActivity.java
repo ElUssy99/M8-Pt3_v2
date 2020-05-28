@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private int intentos = 0;
     private int rango;
 
-    File dir = new File("data"+File.separator+"data"+File.separator+"com.example.endavina"+File.separator+"photos");
+    File dir = new File("data"+File.separator+"data"+File.separator+"com.example.tnb_20.endavina"+File.separator+"photos");
     File imagePlayer;
     private boolean havePhoto;
 
@@ -45,7 +45,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dir.mkdir();
+
+        if (!dir.exists()) {
+            dir.mkdir();
+        }
 
         encender();
     }
